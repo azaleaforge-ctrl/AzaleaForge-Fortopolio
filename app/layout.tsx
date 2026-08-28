@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   title: "AzaleaForge: Bengkel Digital dari Bandung",
   description:
     "AzaleaForge: bengkel solo-dev yang menempa web app berkualitas. Lihat produk kami, atau pesan jasa pembuatan web app sesuai kebutuhan Anda.",
+  verification: {
+    google: "cGAZlTIU_lB5IIM5O9S4fVTuruVz5FkPH5_9t0VJZmc",
+  },
 };
 
 export default function RootLayout({
