@@ -44,7 +44,7 @@ export function Jasa() {
         />
 
         {/* Desktop: 3 pricing plates with a featured card */}
-        <div className="mt-14 hidden grid-cols-1 gap-6 md:grid-cols-3">
+        <div className="mt-14 hidden md:grid md:grid-cols-3 gap-6">
           {PACKAGES.map((p, i) => (
             <Reveal key={p.name} delay={i * 0.1} y={44} className="h-full">
               <div
