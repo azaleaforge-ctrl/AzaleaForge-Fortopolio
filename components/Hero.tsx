@@ -41,7 +41,7 @@ export function Hero() {
             </span>
           </div>
 
-          <h1 className="mt-5 font-display text-5xl font-bold leading-[0.95] tracking-tight text-text">
+          <h1 className="mt-5 font-display text-4xl font-bold leading-[0.95] tracking-tight text-text sm:text-5xl">
             <span className="shimmer-text">AzaleaForge</span>
           </h1>
 
@@ -71,8 +71,8 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Sticky bottom Konsultasi bar — mobile only */}
-        <div className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-ink/90 p-3 backdrop-blur-xl md:hidden">
+        {/* Bottom Konsultasi bar — scoped to the hero (absolute), mobile only */}
+        <div className="absolute inset-x-0 bottom-0 z-30 border-t border-line bg-ink/90 p-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] backdrop-blur-xl md:hidden">
           <SfxButton
             href={waLink(WA_DEFAULT_MSG)}
             variant="primary"

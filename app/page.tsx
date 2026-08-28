@@ -9,7 +9,7 @@ import { Seam } from "@/components/Seam";
 
 export default function Home() {
   return (
-    <main id="top" className="relative pb-24 md:pb-0">
+    <main id="top" className="relative pb-[env(safe-area-inset-bottom)]">
       <Header />
       <Hero />
       <div className="container-x">
