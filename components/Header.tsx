@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { SoundToggle, SfxButton } from "@/lib/anim";
-import { waLink, WA_DEFAULT_MSG } from "@/lib/whatsapp";
+import { waLink, WA_CONSULT_MSG } from "@/lib/whatsapp";
 import { ForgeMark } from "./ForgeMark";
 
 const NAV = [
@@ -74,7 +74,7 @@ export function Header() {
         <div className="flex flex-shrink-0 items-center gap-2.5">
           <SoundToggle />
           <SfxButton
-            href={waLink(WA_DEFAULT_MSG)}
+            href={waLink(WA_CONSULT_MSG)}
             className="hidden sm:inline-flex"
             target="_blank"
             rel="noopener noreferrer"

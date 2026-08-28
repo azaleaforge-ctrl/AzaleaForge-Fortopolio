@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { waLink, WA_DEFAULT_MSG } from "@/lib/whatsapp";
+import { waLink, WA_CONSULT_MSG } from "@/lib/whatsapp";
 import { ForgeMark } from "./ForgeMark";
 
 export function Footer() {
@@ -19,7 +19,7 @@ export function Footer() {
         <div className="flex flex-col items-end gap-1 text-sm text-muted">
           <span>Bandung, Jawa Barat, Indonesia</span>
           <a
-            href={waLink(WA_DEFAULT_MSG)}
+            href={waLink(WA_CONSULT_MSG)}
             target="_blank"
             rel="noopener noreferrer"
             className="text-azalea transition-colors hover:text-ember"
@@ -43,7 +43,7 @@ export function Footer() {
         <div className="flex flex-col items-center gap-1 text-sm text-muted">
           <span>Bandung, Jawa Barat, Indonesia</span>
           <a
-            href={waLink(WA_DEFAULT_MSG)}
+            href={waLink(WA_CONSULT_MSG)}
             target="_blank"
             rel="noopener noreferrer"
             className="text-azalea transition-colors hover:text-ember"

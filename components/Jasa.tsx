@@ -2,7 +2,7 @@
 
 import { Reveal, SfxButton } from "@/lib/anim";
 import { useSfx } from "@/lib/sfx";
-import { waLink, WA_DEFAULT_MSG } from "@/lib/whatsapp";
+import { waLink, waPackageMsg, WA_CONSULT_MSG } from "@/lib/whatsapp";
 import { SectionHeading } from "./SectionHeading";
 
 const PACKAGES = [
@@ -81,7 +81,7 @@ export function Jasa() {
                 )}
                 <div className="mt-auto pt-7">
                   <SfxButton
-                    href={waLink(WA_DEFAULT_MSG)}
+                    href={waLink(waPackageMsg(p))}
                     variant={p.featured ? "primary" : "ghost"}
                     className="w-full"
                     target="_blank"
@@ -133,7 +133,7 @@ export function Jasa() {
                 )}
                 <div className="mt-6">
                   <SfxButton
-                    href={waLink(WA_DEFAULT_MSG)}
+                    href={waLink(waPackageMsg(p))}
                     variant={p.featured ? "primary" : "ghost"}
                     className="w-full py-4 text-base"
                     target="_blank"
@@ -153,7 +153,7 @@ export function Jasa() {
               Tertarik? Konsultasi gratis, kami bantu rancang web impianmu.
             </p>
             <SfxButton
-              href={waLink(WA_DEFAULT_MSG)}
+              href={waLink(WA_CONSULT_MSG)}
               variant="primary"
               target="_blank"
               rel="noopener noreferrer"

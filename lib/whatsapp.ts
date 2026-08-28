@@ -6,5 +6,12 @@ export function waLink(message?: string): string {
   return `${base}?text=${encodeURIComponent(message)}`;
 }
 
-export const WA_DEFAULT_MSG =
-  "Halo AzaleaForge! Saya tertarik konsultasi tentang pembuatan web app. Boleh diskusi lebih lanjut?";
+/** Consultation CTA — professional yet casual. */
+export const WA_CONSULT_MSG =
+  "Halo AzaleaForge! Saya tertarik untuk konsultasi gratis mengenai ide web app saya. Boleh kita diskusikan kebutuhannya supaya solusinya tepat sasaran? Terima kasih.";
+
+/** Package-specific CTA — names the chosen package + price, opens discussion. */
+export function waPackageMsg(p: { name: string; price: string; note?: string }): string {
+  const priceLabel = p.note ? `${p.price} (${p.note})` : p.price;
+  return `Halo AzaleaForge! Saya tertarik dengan paket ${p.name} (${priceLabel}). Boleh saya minta penjelasan lebih lanjut dan kita diskusikan kebutuhan saya? Terima kasih.`;
+}

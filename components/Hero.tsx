@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { Reveal, SfxButton } from "@/lib/anim";
-import { waLink, WA_DEFAULT_MSG } from "@/lib/whatsapp";
+import { waLink, WA_CONSULT_MSG } from "@/lib/whatsapp";
 import { ForgeMark } from "./ForgeMark";
 import { EmberField } from "./EmberField";
 import { ForgeCore } from "./ForgeCore";
@@ -60,7 +60,7 @@ export function Hero() {
               Lihat Produk
             </SfxButton>
             <SfxButton
-              href={waLink(WA_DEFAULT_MSG)}
+              href={waLink(WA_CONSULT_MSG)}
               variant="ghost"
               className="w-full py-4 text-base"
               target="_blank"
@@ -109,7 +109,7 @@ export function Hero() {
                 Lihat Produk
               </SfxButton>
               <SfxButton
-                href={waLink(WA_DEFAULT_MSG)}
+                href={waLink(WA_CONSULT_MSG)}
                 variant="ghost"
                 target="_blank"
                 rel="noopener noreferrer"

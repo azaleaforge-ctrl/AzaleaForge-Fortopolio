@@ -1,7 +1,7 @@
 "use client";
 
 import { Reveal, SfxButton } from "@/lib/anim";
-import { waLink, WA_DEFAULT_MSG } from "@/lib/whatsapp";
+import { waLink, WA_CONSULT_MSG } from "@/lib/whatsapp";
 import { ForgeMark } from "./ForgeMark";
 
 export function Kontak() {
@@ -39,7 +39,7 @@ export function Kontak() {
               </p>
               <div className="mt-9 flex justify-center">
                 <SfxButton
-                  href={waLink(WA_DEFAULT_MSG)}
+                  href={waLink(WA_CONSULT_MSG)}
                   variant="primary"
                   className="px-8 py-4 text-base"
                   target="_blank"
@@ -84,7 +84,7 @@ export function Kontak() {
             </p>
             <div className="mt-7">
               <SfxButton
-                href={waLink(WA_DEFAULT_MSG)}
+                href={waLink(WA_CONSULT_MSG)}
                 variant="primary"
                 className="w-full py-4 text-base"
                 target="_blank"
