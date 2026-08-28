@@ -74,7 +74,6 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
     },
   },
-  icons: { icon: "/logo.png", apple: "/logo.png" },
   verification: {
     google: "cGAZlTIU_lB5IIM5O9S4fVTuruVz5FkPH5_9t0VJZmc",
   },
