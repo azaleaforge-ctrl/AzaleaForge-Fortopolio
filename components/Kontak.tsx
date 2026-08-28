@@ -86,7 +86,7 @@ export function Kontak() {
               <SfxButton
                 href={waLink(WA_DEFAULT_MSG)}
                 variant="primary"
-                className="w-full py-5 text-lg"
+                className="w-full py-4 text-base"
                 target="_blank"
                 rel="noopener noreferrer"
               >

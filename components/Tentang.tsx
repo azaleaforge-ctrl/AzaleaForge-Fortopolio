@@ -66,14 +66,14 @@ export function Tentang() {
         </div>
 
         {/* Mobile: horizontal swipe / scroll-snap milestone cards */}
-        <div className="block md:hidden">
-          <div className="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2">
+        <div className="mt-12 block md:hidden">
+          <div className="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-1 [&::-webkit-scrollbar]:hidden [scrollbar-width:none]">
             {MILESTONES.map((m, i) => (
               <Reveal
                 as="div"
                 key={m.n}
                 delay={i * 0.05}
-                className="min-w-[78%] snap-center"
+                className="min-w-[80%] snap-center"
               >
                 <div
                   onMouseEnter={() => sfx.play("hover")}
@@ -93,8 +93,9 @@ export function Tentang() {
               </Reveal>
             ))}
           </div>
-          <p className="mt-3 px-1 text-xs text-muted">
-            Geser ke samping untuk milestone lainnya →
+          <p className="mt-4 flex items-center justify-center gap-2 text-xs text-muted">
+            Geser untuk melihat milestone lainnya
+            <span className="text-azalea">→</span>
           </p>
         </div>
       </div>

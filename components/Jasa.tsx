@@ -96,14 +96,14 @@ export function Jasa() {
         </div>
 
         {/* Mobile: stacked cards, price-forward hierarchy, full-width buttons */}
-        <div className="mt-12 block space-y-5 md:hidden">
+        <div className="mt-12 block space-y-6 md:hidden">
           {PACKAGES.map((p, i) => (
             <Reveal key={p.name} delay={i * 0.05} y={30} className="h-full">
               <div
                 onMouseEnter={() => sfx.play("hover")}
-                className={`relative flex flex-col rounded-3xl border p-6 ${
+                className={`relative flex flex-col rounded-3xl border p-6 transition-colors active:border-azalea/40 ${
                   p.featured
-                    ? "border-azalea/50 bg-surface-2 shadow-[0_30px_70px_-30px_rgba(255,93,143,0.6)]"
+                    ? "border-azalea/50 bg-surface/60 shadow-[0_30px_70px_-30px_rgba(255,93,143,0.6)]"
                     : "border-line bg-surface/60"
                 }`}
               >

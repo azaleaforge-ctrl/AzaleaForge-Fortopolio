@@ -36,7 +36,7 @@ export function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         open
-          ? "border-b border-line bg-ink/95 backdrop-blur-xl"
+          ? "border-b border-line bg-ink/98 backdrop-blur-xl"
           : scrolled
           ? "border-b border-line bg-ink/70 backdrop-blur-xl"
           : "border-b border-transparent bg-transparent"
@@ -114,20 +114,20 @@ export function Header() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.25, ease: "easeOut" }}
         >
-          <nav className="flex flex-1 flex-col justify-center px-6">
+          <nav className="flex flex-1 flex-col justify-center gap-3 px-6">
             {NAV.map((n) => (
               <a
                 key={n.href}
                 href={n.href}
                 onClick={() => setOpen(false)}
-                className="flex min-h-[60px] items-center justify-between border-b border-line/60 font-display text-2xl font-semibold text-text transition-colors active:text-azalea"
+                className="flex items-center justify-between rounded-2xl border border-line bg-surface/40 px-5 py-4 font-display text-xl font-semibold text-text transition-colors active:border-azalea/40 active:bg-surface-2"
               >
                 {n.label}
                 <ForgeMark className="h-5 w-5 text-azalea" />
               </a>
             ))}
           </nav>
-          <div className="border-t border-line p-5">
+          <div className="border-t border-line p-5 pb-[calc(1.25rem+env(safe-area-inset-bottom))]">
             <SfxButton
               href={waLink(WA_DEFAULT_MSG)}
               variant="primary"

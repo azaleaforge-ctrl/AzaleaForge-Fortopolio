@@ -106,7 +106,7 @@ export function Produk() {
             <Reveal key={p.name} y={30}>
               <article
                 onMouseEnter={() => sfx.play("hover")}
-                className="overflow-hidden rounded-3xl border border-line bg-surface/50"
+                className="overflow-hidden rounded-3xl border border-line bg-surface/50 transition-colors active:border-azalea/40"
               >
                 <div className="aspect-[4/3] w-full overflow-hidden border-b border-line bg-ink/40">
                   <img
