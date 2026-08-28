@@ -13,14 +13,9 @@ export const EASE = [0.22, 1, 0.36, 1] as const;
  * "empty sections on refresh" bug). A safety timeout guarantees content can
  * never stay hidden. Plays enter/leave SFX.
  */
-export function useReveal<T extends HTMLElement = HTMLElement>(
-  opts?: { sound?: boolean }
-) {
-  const sfx = useSfx();
+export function useReveal<T extends HTMLElement = HTMLElement>() {
   const [shown, setShown] = useState(false);
-  const entered = useRef(false);
   const nodeRef = useRef<T | null>(null);
-  const sound = opts?.sound ?? true;
 
   const setRef = useCallback((node: T | null) => {
     nodeRef.current = node;
@@ -41,16 +36,11 @@ export function useReveal<T extends HTMLElement = HTMLElement>(
       if (done) return;
       done = true;
       setShown(true);
-      if (sound && !entered.current) {
-        sfx.play("enter");
-        entered.current = true;
-      }
     };
     const io = new IntersectionObserver(
       (entries) => {
         for (const e of entries) {
           if (e.isIntersecting) reveal();
-          else if (done && sound) sfx.play("leave");
         }
       },
       { threshold: 0.12, rootMargin: "0px 0px -5% 0px" }
@@ -61,29 +51,27 @@ export function useReveal<T extends HTMLElement = HTMLElement>(
       io.disconnect();
       window.clearTimeout(t);
     };
-  }, [sound, sfx]);
+  }, []);
 
   return { setRef, shown };
 }
 
-/** Scroll-triggered reveal with enter/leave SFX. */
+/** Scroll-triggered visual reveal (no SFX). */
 export function Reveal({
   children,
   className,
   delay = 0,
   y = 28,
-  sound = true,
   as = "div",
 }: {
   children: ReactNode;
   className?: string;
   delay?: number;
   y?: number;
-  sound?: boolean;
   as?: "div" | "section" | "li" | "article";
 }) {
   const reduce = useReducedMotion();
-  const { setRef, shown } = useReveal<HTMLElement>({ sound });
+  const { setRef, shown } = useReveal<HTMLElement>();
   const MotionTag = motion[as] as ElementType;
   return (
     <MotionTag

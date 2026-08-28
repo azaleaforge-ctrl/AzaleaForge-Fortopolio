@@ -31,7 +31,7 @@ function DesktopProductCard({
 }) {
   const reduce = useReducedMotion();
   const sfx = useSfx();
-  const img = useReveal<HTMLDivElement>({ sound: false });
+  const img = useReveal<HTMLDivElement>();
   const reverse = i % 2 === 1;
   return (
     <Reveal key={p.name} y={40}>
