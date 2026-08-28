@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { waLink, WA_DEFAULT_MSG } from "@/lib/whatsapp";
 import { ForgeMark } from "./ForgeMark";
 
@@ -7,7 +8,7 @@ export function Footer() {
       {/* Desktop: row layout */}
       <div className="container-x hidden items-center justify-between md:flex">
         <div className="flex items-center gap-3">
-          <img src="/logo.png" alt="AzaleaForge" className="h-9 w-9 rounded-md" />
+          <Image src="/logo.png" alt="AzaleaForge" width={36} height={36} className="h-9 w-9 rounded-md" />
           <div>
             <div className="font-display text-lg font-bold text-text">
               Azalea<span className="text-gradient">Forge</span>
@@ -31,7 +32,7 @@ export function Footer() {
       {/* Mobile: stacked, centered */}
       <div className="container-x flex flex-col items-center gap-6 text-center md:hidden">
         <div className="flex flex-col items-center gap-3">
-          <img src="/logo.png" alt="AzaleaForge" className="h-10 w-10 rounded-md" />
+          <Image src="/logo.png" alt="AzaleaForge" width={40} height={40} className="h-10 w-10 rounded-md" />
           <div>
             <div className="font-display text-lg font-bold text-text">
               Azalea<span className="text-gradient">Forge</span>

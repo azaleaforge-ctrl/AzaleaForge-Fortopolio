@@ -26,6 +26,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
 }
 
 body {
@@ -74,7 +75,7 @@ body::before {
   color: transparent;
 }
 
-/* Molten shimmer for the hero wordmark — like glowing forged metal. */
+/* Molten shimmer for the hero wordmark, like glowing forged metal. */
 .shimmer-text {
   background: linear-gradient(
     110deg,

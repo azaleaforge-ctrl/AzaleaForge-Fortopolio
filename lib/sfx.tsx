@@ -123,7 +123,7 @@ export function SfxProvider({ children }: { children: React.ReactNode }) {
 
   // Prime the AudioContext on the first user gesture so SFX have zero latency
   // afterwards. Browsers block audio until a gesture (autoplay policy), so the
-  // hero's load-time reveal is silent by design — this just removes the delay
+  // hero's load-time reveal is silent by design, this just removes the delay
   // on every interaction after the first tap/scroll/key.
   useEffect(() => {
     const opts: AddEventListenerOptions = { once: true, capture: true };
@@ -153,7 +153,7 @@ export function SfxProvider({ children }: { children: React.ReactNode }) {
         master.connect(ctx.destination);
 
         switch (name) {
-          // Light anvil "tink" on cursor hover — subtle, high, short.
+          // Light anvil "tink" on cursor hover, subtle, high, short.
           case "hover":
             metal(ctx, master, {
               freq: 1250,
@@ -182,7 +182,7 @@ export function SfxProvider({ children }: { children: React.ReactNode }) {
               partials: [1, 2.76, 5.4, 8.16],
             });
             break;
-          // Barely-there low tick when leaving — keeps the "in/out" feel without annoyance.
+          // Barely-there low tick when leaving, keeps the "in/out" feel without annoyance.
           case "leave":
             metal(ctx, master, {
               freq: 300,

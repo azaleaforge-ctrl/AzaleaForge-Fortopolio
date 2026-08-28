@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { SoundToggle, SfxButton } from "@/lib/anim";
 import { waLink, WA_DEFAULT_MSG } from "@/lib/whatsapp";
@@ -43,12 +44,14 @@ export function Header() {
       }`}
     >
       <div className="container-x flex h-16 items-center justify-between gap-4">
-        <a href="#top" className="group flex items-center gap-2.5">
-          <img
-            src="/logo.png"
-            alt="AzaleaForge"
-            className="h-8 w-8 rounded-md transition-transform duration-300 group-hover:rotate-[-6deg]"
-          />
+          <a href="#top" className="group flex flex-shrink-0 items-center gap-2.5">
+            <Image
+              src="/logo.png"
+              alt="AzaleaForge"
+              width={32}
+              height={32}
+              className="h-8 w-8 rounded-md transition-transform duration-300 group-hover:rotate-[-6deg]"
+            />
           <span className="font-display text-lg font-bold tracking-tight text-text">
             Azalea<span className="text-gradient">Forge</span>
           </span>
@@ -68,7 +71,7 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2.5">
+        <div className="flex flex-shrink-0 items-center gap-2.5">
           <SoundToggle />
           <SfxButton
             href={waLink(WA_DEFAULT_MSG)}
@@ -127,17 +130,7 @@ export function Header() {
               </a>
             ))}
           </nav>
-          <div className="border-t border-line p-5 pb-[calc(1.25rem+env(safe-area-inset-bottom))]">
-            <SfxButton
-              href={waLink(WA_DEFAULT_MSG)}
-              variant="primary"
-              className="w-full py-4 text-base"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              WhatsApp
-            </SfxButton>
-          </div>
+          <div className="h-[env(safe-area-inset-bottom)]" />
         </motion.div>
       )}
     </header>

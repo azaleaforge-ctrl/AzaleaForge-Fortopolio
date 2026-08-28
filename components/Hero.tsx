@@ -24,9 +24,9 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
 
         {/* Lighter ember field for mobile performance */}
-        <EmberField count={8} />
+        <EmberField count={6} />
 
-        <div className="relative flex min-h-[100svh] flex-col items-center justify-center px-6 pb-28 pt-24 text-center">
+        <div className="relative flex min-h-[100svh] flex-col items-center justify-center px-6 pb-16 pt-24 text-center">
           {/* Simplified ambient forge core (no heavy animation) */}
           <div className="relative mb-7 grid h-40 w-40 place-items-center">
             <div className="absolute h-32 w-32 rounded-full bg-[radial-gradient(circle,rgba(255,93,143,0.4),rgba(255,138,61,0.15)_55%,transparent_72%)] blur-xl" />
@@ -47,7 +47,7 @@ export function Hero() {
 
           <p className="mt-5 max-w-sm text-base leading-relaxed text-muted">
             Bukan perusahaan besar. Kami bengkel solo-dev yang lahir dari tempaan
-            penuh perjuangan — di mana kegagalan adalah guru, dan hasil yang matang
+            penuh perjuangan, di mana kegagalan adalah guru, dan hasil yang matang
             adalah tempaan yang sempurna.
           </p>
 
@@ -69,19 +69,6 @@ export function Hero() {
               Konsultasi Gratis
             </SfxButton>
           </div>
-        </div>
-
-        {/* Bottom Konsultasi bar — scoped to the hero (absolute), mobile only */}
-        <div className="absolute inset-x-0 bottom-0 z-30 border-t border-line bg-ink/90 p-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] backdrop-blur-xl md:hidden">
-          <SfxButton
-            href={waLink(WA_DEFAULT_MSG)}
-            variant="primary"
-            className="w-full py-4 text-base"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Konsultasi
-          </SfxButton>
         </div>
       </section>
 
@@ -113,7 +100,7 @@ export function Hero() {
 
             <p className="mt-7 max-w-xl text-lg leading-relaxed text-muted">
               Bukan perusahaan besar. Kami bengkel solo-dev yang lahir dari tempaan
-              penuh perjuangan — di mana kegagalan adalah guru, dan hasil yang matang
+              penuh perjuangan, di mana kegagalan adalah guru, dan hasil yang matang
               adalah tempaan yang sempurna.
             </p>
 

@@ -9,7 +9,7 @@ export const EASE = [0.22, 1, 0.36, 1] as const;
 
 /**
  * Reliable scroll-reveal. Uses IntersectionObserver (NOT framer's whileInView,
- * which fails to fire for elements already in view at load — the cause of the
+  * which fails to fire for elements already in view at load, the cause of the
  * "empty sections on refresh" bug). A safety timeout guarantees content can
  * never stay hidden. Plays enter/leave SFX.
  */

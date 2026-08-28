@@ -6,7 +6,7 @@ import { ForgeMark } from "./ForgeMark";
 
 export function Kontak() {
   return (
-    <section id="kontak" className="scroll-mt-24">
+      <section id="kontak">
       {/* Desktop: contained rounded CTA panel */}
       <div className="hidden py-24 md:block md:py-32">
         <div className="container-x">

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import Image from "next/image";
 import { Reveal, SfxButton, useReveal, EASE } from "@/lib/anim";
 import { useSfx } from "@/lib/sfx";
 import { SectionHeading } from "./SectionHeading";
@@ -48,14 +49,16 @@ function DesktopProductCard({
               : { opacity: 0, x: reverse ? 48 : -48 }
           }
           transition={{ duration: 0.7, ease: EASE }}
-          className={`overflow-hidden rounded-2xl border border-line bg-ink/40 ${
+          className={`relative aspect-[2.12/1] overflow-hidden rounded-2xl border border-line bg-ink/40 ${
             reverse ? "md:order-2" : "md:order-1"
           }`}
         >
-          <img
+          <Image
             src={p.img}
             alt={`Tangkapan layar ${p.name}`}
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
           />
         </motion.div>
 
@@ -86,7 +89,7 @@ function DesktopProductCard({
 export function Produk() {
   const sfx = useSfx();
   return (
-    <section id="produk" className="scroll-mt-24 py-24 md:py-32">
+      <section id="produk" className="py-24 md:py-32">
       <div className="container-x">
         <SectionHeading
           eyebrow="Produk"
@@ -108,11 +111,13 @@ export function Produk() {
                 onMouseEnter={() => sfx.play("hover")}
                 className="overflow-hidden rounded-3xl border border-line bg-surface/50 transition-colors active:border-azalea/40"
               >
-                <div className="aspect-[4/3] w-full overflow-hidden border-b border-line bg-ink/40">
-                  <img
+                <div className="relative aspect-[4/3] w-full overflow-hidden border-b border-line bg-ink/40">
+                  <Image
                     src={p.img}
                     alt={`Tangkapan layar ${p.name}`}
-                    className="h-full w-full object-cover"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
                   />
                 </div>
                 <div className="p-6">

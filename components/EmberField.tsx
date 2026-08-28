@@ -4,7 +4,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
 
 /** Rising embers for the hero forge atmosphere. Disabled on reduced motion. */
-export function EmberField({ count = 20 }: { count?: number }) {
+export function EmberField({ count = 12 }: { count?: number }) {
   const reduce = useReducedMotion();
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);

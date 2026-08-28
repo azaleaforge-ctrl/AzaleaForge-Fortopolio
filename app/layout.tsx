@@ -16,7 +16,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "AzaleaForge — Bengkel Digital dari Bandung",
+  title: "AzaleaForge: Bengkel Digital dari Bandung",
   description:
     "AzaleaForge: bengkel solo-dev yang menempa web app berkualitas. Lihat produk kami, atau pesan jasa pembuatan web app sesuai kebutuhan Anda.",
 };

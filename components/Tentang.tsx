@@ -31,12 +31,12 @@ const MILESTONES = [
 export function Tentang() {
   const sfx = useSfx();
   return (
-    <section id="tentang" className="scroll-mt-24 py-24 md:py-32">
+      <section id="tentang" className="py-24 md:py-32">
       <div className="container-x">
         <SectionHeading
           eyebrow="Cerita Kami"
           title="Dari bengkel kecil di perumahan, menjadi gedung penuh tempaan."
-          intro="AzaleaForge dirintis oleh seorang mahasiswa solo-dev. Masih tahap berjuang di pasar — hanya bengkel kecil di perumahan yang lambat laun menempa diri jadi gedung kokoh. Setiap pukulan palu penuh perjuangan dan kegagalan, itulah yang membentuk kami."
+          intro="AzaleaForge dirintis oleh seorang mahasiswa solo-dev. Masih tahap berjuang di pasar, hanya bengkel kecil di perumahan yang lambat laun menempa diri jadi gedung kokoh. Setiap pukulan palu penuh perjuangan dan kegagalan, itulah yang membentuk kami."
         />
 
         {/* Desktop: vertical molten timeline */}

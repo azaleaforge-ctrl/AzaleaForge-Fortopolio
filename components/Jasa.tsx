@@ -35,7 +35,7 @@ const PACKAGES = [
 export function Jasa() {
   const sfx = useSfx();
   return (
-    <section id="jasa" className="scroll-mt-24 py-24 md:py-32">
+      <section id="jasa" className="py-24 md:py-32">
       <div className="container-x">
         <SectionHeading
           eyebrow="Jasa & Paket"
@@ -150,7 +150,7 @@ export function Jasa() {
         <Reveal className="mt-12">
           <div className="flex flex-col items-center gap-5 rounded-3xl border border-line bg-surface/40 px-6 py-10 text-center">
             <p className="max-w-xl text-lg text-muted">
-              Tertarik? Konsultasi gratis — kami bantu rancang web impianmu.
+              Tertarik? Konsultasi gratis, kami bantu rancang web impianmu.
             </p>
             <SfxButton
               href={waLink(WA_DEFAULT_MSG)}
