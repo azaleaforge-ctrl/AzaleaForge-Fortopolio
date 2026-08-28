@@ -107,12 +107,18 @@ export default function RootLayout({
       className={`${sora.variable} ${inter.variable} antialiased`}
     >
       <body className="min-h-full bg-ink text-text">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
-        />
-        <SfxProvider>{children}</SfxProvider>
-      </body>
+      {/* Cloudflare Web Analytics */}
+      <script
+        type="module"
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon='{"token": "6dbf8f8c9e8e4a07bee523a42f14c3db"}'
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+      />
+      <SfxProvider>{children}</SfxProvider>
+    </body>
     </html>
   );
 }
