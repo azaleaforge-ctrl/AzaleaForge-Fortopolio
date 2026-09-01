@@ -23,7 +23,7 @@ const PRODUCTS = [
   },
   {
     name: "GSG ID",
-    desc: "Gudang Serba Guna — satu domain, dua lorong: UMKM untuk yang jualan & Karir untuk yang melamar. 30+ tools offline di browser (HPP, invoice, QR, katalog, CV ATS, cek gaji) tanpa iklan mengganggu.",
+    desc: "Gudang Serba Guna satu domain, dua lorong: UMKM untuk yang jualan & Karir untuk yang melamar. 30+ tools offline di browser (HPP, invoice, QR, katalog, CV ATS, cek gaji) tanpa iklan mengganggu.",
     img: "/product-3.png",
     href: "https://gsgid.vercel.app/",
     cta: "Buka GSG ID",
