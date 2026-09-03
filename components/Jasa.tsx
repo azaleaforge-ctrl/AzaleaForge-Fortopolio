@@ -5,37 +5,99 @@ import { useSfx } from "@/lib/sfx";
 import { waLink, waPackageMsg, WA_CONSULT_MSG } from "@/lib/whatsapp";
 import { SectionHeading } from "./SectionHeading";
 
-const PACKAGES = [
+type Package = {
+  name: string;
+  price: string;
+  note: string;
+  benefits: string[];
+  desc?: string;
+  featured: boolean;
+};
+
+const PACKAGES: Package[] = [
   {
-    name: "Landing Page Only",
+    name: "Starter",
     price: "Rp 250.000",
     note: "",
-    desc: "Satu halaman rapi untuk portfolio diri atau kepercayaan klien. Cocok untuk freelancer.",
-    extra: "Bisa pakai Database / LocalStorage / IndexedDB sesuai kebutuhan.",
+    benefits: [
+      "Landing Page 1 Halaman",
+      "Revisi 2x",
+      "Desain Responsive HP",
+      "Tombol Whatsapp langsung",
+      "Cocok untuk Portfolio dan bangun usaha",
+    ],
     featured: false,
   },
   {
-    name: "Landing Page + Fitur",
-    price: "Rp 450.000",
-    note: "harga menyesuaikan",
-    desc: "Landing page + 1–5 halaman/fitur utama sesuai kebutuhan. Cocok untuk UMKM, freelancer, creator, e-commerce.",
-    extra: "Fitur >5 dikenakan tambahan Rp10.000/fitur.",
+    name: "Bisnis",
+    price: "Rp 1.700.000",
+    note: "",
+    benefits: [
+      "Website 5 Halaman (Lebih akan dikenakan biaya 10rb per fitur)",
+      "CMS mudah di edit sendiri",
+      "SEO dasar/basic",
+      "Desain Premium",
+      "Support 1 Bulan",
+      "Gratis SSL",
+    ],
     featured: true,
   },
   {
-    name: "Upgrade Server / Web App",
-    price: "Rp 1.000.000",
+    name: "Katalog Pro",
+    price: "Rp 3.400.000",
     note: "",
-    desc: "Database lebih luas, hosting lebih tenang. Cocok untuk trafik besar agar web bebas eror/bug.",
-    extra: "",
+    benefits: [
+      "Katalog Produk Unlimited",
+      "Order Langsung Ke Whatsapp",
+      "Tanpa Payment Gateway",
+      "Tanpa simpan Uang di web jadi aman",
+      "Link Checkout WA otomatis",
+      "QR katalog",
+      "Cocok untuk jualan aman",
+    ],
     featured: false,
   },
 ];
 
+function CheckIcon() {
+  return (
+    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-azalea/15 ring-1 ring-azalea/20">
+      <svg
+        width="10"
+        height="10"
+        viewBox="0 0 12 12"
+        fill="none"
+        aria-hidden="true"
+      >
+        <path
+          d="M2.5 6L4.8 8.3L9.5 3.5"
+          stroke="#ff5d8f"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </span>
+  );
+}
+
+function BenefitsList({ benefits }: { benefits: string[] }) {
+  return (
+    <ul className="flex flex-1 flex-col gap-2.5">
+      {benefits.map((b) => (
+        <li key={b} className="flex items-start gap-2.5 text-sm leading-relaxed text-muted">
+          <CheckIcon />
+          <span>{b}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 export function Jasa() {
   const sfx = useSfx();
   return (
-      <section id="jasa" className="py-24 md:py-32">
+    <section id="jasa" className="py-24 md:py-32">
       <div className="container-x">
         <SectionHeading
           eyebrow="Jasa & Paket"
@@ -71,14 +133,9 @@ export function Jasa() {
                     <span className="text-xs text-muted">({p.note})</span>
                   )}
                 </div>
-                <p className="mt-4 text-sm leading-relaxed text-muted">
-                  {p.desc}
-                </p>
-                {p.extra && (
-                  <p className="mt-3 rounded-xl border border-line bg-ink/40 px-3 py-2 text-xs text-muted">
-                    {p.extra}
-                  </p>
-                )}
+                <div className="mt-6 flex flex-1 flex-col">
+                  <BenefitsList benefits={p.benefits} />
+                </div>
                 <div className="mt-auto pt-7">
                   <SfxButton
                     href={waLink(waPackageMsg(p))}
@@ -123,14 +180,9 @@ export function Jasa() {
                     <span className="text-xs text-muted">({p.note})</span>
                   )}
                 </div>
-                <p className="mt-3 text-sm leading-relaxed text-muted">
-                  {p.desc}
-                </p>
-                {p.extra && (
-                  <p className="mt-3 rounded-xl border border-line bg-ink/40 px-3 py-2 text-xs text-muted">
-                    {p.extra}
-                  </p>
-                )}
+                <div className="mt-5 flex flex-1 flex-col">
+                  <BenefitsList benefits={p.benefits} />
+                </div>
                 <div className="mt-6">
                   <SfxButton
                     href={waLink(waPackageMsg(p))}
