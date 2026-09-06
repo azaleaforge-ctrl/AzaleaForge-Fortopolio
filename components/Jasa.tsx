@@ -17,7 +17,7 @@ type Package = {
 const PACKAGES: Package[] = [
   {
     name: "Starter",
-    price: "Rp 250.000",
+    price: "Rp 300.000",
     note: "",
     benefits: [
       "Landing Page 1 Halaman",
