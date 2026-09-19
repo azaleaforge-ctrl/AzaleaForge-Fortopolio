@@ -2,6 +2,7 @@ import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Tentang } from "@/components/Tentang";
 import { Produk } from "@/components/Produk";
+import { SkillAhli } from "@/components/SkillAhli";
 import { Jasa } from "@/components/Jasa";
 import { Kontak } from "@/components/Kontak";
 import { Footer } from "@/components/Footer";
@@ -20,6 +21,10 @@ export default function Home() {
         <Seam />
       </div>
       <Produk />
+      <div className="container-x">
+        <Seam />
+      </div>
+      <SkillAhli />
       <div className="container-x">
         <Seam />
       </div>

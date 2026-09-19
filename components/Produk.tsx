@@ -28,6 +28,13 @@ const PRODUCTS = [
     href: "https://gsgid.vercel.app/",
     cta: "Buka GSG ID",
   },
+  {
+    name: "Arah Khatam",
+    desc: "Platform digital untuk pencarian arah kiblat, jadwal sholat, dan bacaan Al-Quran lengkap dengan terjemahan. Dibangun dengan Next.js, PWA-ready, offline-first, dan performa tinggi.",
+    img: "/product-4.png",
+    href: "https://arah-khatam.vercel.app/",
+    cta: "Buka Arah Khatam",
+  },
 ];
 
 function DesktopProductCard({

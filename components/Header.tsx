@@ -122,7 +122,16 @@ export function Header() {
               <a
                 key={n.href}
                 href={n.href}
-                onClick={() => setOpen(false)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setOpen(false);
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setOpen(false);
+                  }
+                }}
                 className="flex items-center justify-between rounded-2xl border border-line bg-surface/40 px-5 py-4 font-display text-xl font-semibold text-text transition-colors active:border-azalea/40 active:bg-surface-2"
               >
                 {n.label}
