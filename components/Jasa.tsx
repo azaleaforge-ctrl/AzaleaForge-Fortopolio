@@ -57,6 +57,19 @@ const PACKAGES: Package[] = [
     ],
     featured: false,
   },
+  {
+    name: "Custom",
+    price: "Harga menyesuaikan",
+    note: "",
+    benefits: [
+      "Desain & fitur dibuat sesuai kebutuhan",
+      "Untuk sekolah, organisasi, perusahaan & lainnya",
+      "Konsultasi & estimasi harga gratis",
+      "Revisi mengikuti kesepakatan",
+      "Pendampingan setelah website rilis",
+    ],
+    featured: false,
+  },
 ];
 
 function CheckIcon() {
@@ -105,8 +118,8 @@ export function Jasa() {
           intro="Pilih paket, atau konsultasikan kebutuhanmu."
         />
 
-        {/* Desktop: 3 pricing plates with a featured card */}
-        <div className="mt-14 hidden md:grid md:grid-cols-3 gap-6">
+        {/* Desktop: 4 pricing plates with a featured card */}
+        <div className="mt-14 hidden md:grid md:grid-cols-2 xl:grid-cols-4 gap-6">
           {PACKAGES.map((p, i) => (
             <Reveal key={p.name} delay={i * 0.1} y={44} className="h-full">
               <div
@@ -126,7 +139,11 @@ export function Jasa() {
                   {p.name}
                 </h3>
                 <div className="mt-4 flex items-baseline gap-2">
-                  <span className="font-display text-3xl font-bold text-gradient">
+                  <span
+                    className={`font-display font-bold text-gradient ${
+                      p.name === "Custom" ? "text-2xl" : "text-3xl"
+                    }`}
+                  >
                     {p.price}
                   </span>
                   {p.note && (
@@ -173,7 +190,11 @@ export function Jasa() {
                   {p.name}
                 </h3>
                 <div className="mt-3 flex items-baseline gap-2">
-                  <span className="font-display text-4xl font-bold text-gradient">
+                  <span
+                    className={`font-display font-bold text-gradient ${
+                      p.name === "Custom" ? "text-2xl" : "text-4xl"
+                    }`}
+                  >
                     {p.price}
                   </span>
                   {p.note && (
